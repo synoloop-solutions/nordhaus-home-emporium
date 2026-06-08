@@ -9,8 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export const Route = createFileRoute("/account")({
   head: () => ({
     meta: [
-      { title: "My Account — NordHaus Living" },
-      { name: "description", content: "Sign in or create your NordHaus Living account." },
+      { title: "My Account — Aurum Interiors" },
+      { name: "description", content: "Sign in or create your Aurum Interiors account." },
     ],
     links: [{ rel: "canonical", href: "/account" }],
   }),

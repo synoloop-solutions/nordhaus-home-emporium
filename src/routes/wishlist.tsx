@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/wishlist")({
   head: () => ({
     meta: [
-      { title: "Your Wishlist — NordHaus Living" },
-      { name: "description", content: "Saved furniture and decor from NordHaus Living." },
+      { title: "Your Wishlist — Aurum Interiors" },
+      { name: "description", content: "Saved furniture and decor from Aurum Interiors." },
     ],
     links: [{ rel: "canonical", href: "/wishlist" }],
   }),

@@ -32,10 +32,10 @@ export const Route = createFileRoute("/shop/")({
   validateSearch: zodValidator(searchSchema),
   head: () => ({
     meta: [
-      { title: "Shop All Furniture — NordHaus Living" },
+      { title: "Shop All Furniture — Aurum Interiors" },
       { name: "description", content: "Browse sofas, beds, dining, office and outdoor furniture with advanced filters." },
-      { property: "og:title", content: "Shop All Furniture — NordHaus Living" },
-      { property: "og:description", content: "Browse the full NordHaus Living furniture collection." },
+      { property: "og:title", content: "Shop All Furniture — Aurum Interiors" },
+      { property: "og:description", content: "Browse the full Aurum Interiors furniture collection." },
     ],
     links: [{ rel: "canonical", href: "/shop" }],
   }),

@@ -81,14 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NordHaus Living — Scandinavian Furniture & Home Decor" },
-      { name: "description", content: "Warm, considered Scandinavian-inspired furniture and home decor, built to last." },
-      { name: "author", content: "NordHaus Living" },
-      { property: "og:title", content: "NordHaus Living" },
-      { property: "og:description", content: "Scandinavian-inspired furniture and home decor for the modern home." },
+      { title: "Aurum Interiors — Handcrafted Luxury Furniture & Bespoke Design" },
+      { name: "description", content: "Aurum Interiors crafts heirloom furniture from Italian leather, solid oak, travertine and brass — for private residences, hospitality and the architectural home." },
+      { name: "author", content: "Aurum Interiors" },
+      { property: "og:title", content: "Aurum Interiors" },
+      { property: "og:description", content: "Handcrafted luxury furniture, designer collections and bespoke interior solutions." },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "NordHaus Living" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:site_name", content: "Aurum Interiors" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -96,7 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap",
       },
     ],
     scripts: [
@@ -105,8 +105,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "NordHaus Living",
-          description: "Scandinavian-inspired furniture and home decor.",
+          name: "Aurum Interiors",
+          description: "Handcrafted luxury furniture, designer collections and bespoke interior solutions.",
         }),
       },
     ],
