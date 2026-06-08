@@ -71,7 +71,7 @@ function ShopPage() {
   }, [sp, maxPrice]);
 
   const setParam = (key: string, value: string | undefined) =>
-    navigate({ search: (prev) => ({ ...prev, [key]: value || undefined }) });
+    navigate({ search: (prev: Record<string, unknown>) => ({ ...prev, [key]: value || undefined }) });
 
   const filters = (
     <div className="space-y-6">
