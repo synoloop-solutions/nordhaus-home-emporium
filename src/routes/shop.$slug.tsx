@@ -31,7 +31,7 @@ export const Route = createFileRoute("/shop/$slug")({
     if (!p) return {};
     return {
       meta: [
-        { title: `${p.name} — NordHaus Living` },
+        { title: `${p.name} — Aurum Interiors` },
         { name: "description", content: p.description },
         { property: "og:title", content: p.name },
         { property: "og:description", content: p.description },

@@ -11,8 +11,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Checkout — NordHaus Living" },
-      { name: "description", content: "Secure checkout for your NordHaus Living order." },
+      { title: "Checkout — Aurum Interiors" },
+      { name: "description", content: "Secure checkout for your Aurum Interiors order." },
       { name: "robots", content: "noindex" },
     ],
     links: [{ rel: "canonical", href: "/checkout" }],

@@ -11,8 +11,8 @@ import { TrustBar } from "@/components/TrustBar";
 export const Route = createFileRoute("/cart")({
   head: () => ({
     meta: [
-      { title: "Shopping Cart — NordHaus Living" },
-      { name: "description", content: "Review the items in your NordHaus Living cart." },
+      { title: "Shopping Cart — Aurum Interiors" },
+      { name: "description", content: "Review the items in your Aurum Interiors cart." },
     ],
     links: [{ rel: "canonical", href: "/cart" }],
   }),

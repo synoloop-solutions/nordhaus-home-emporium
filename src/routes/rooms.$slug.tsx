@@ -25,9 +25,9 @@ export const Route = createFileRoute("/rooms/$slug")({
     const scene = loaderData?.scene;
     return {
       meta: [
-        { title: `${scene?.name ?? "Shop the Room"} — NordHaus Living` },
+        { title: `${scene?.name ?? "Shop the Room"} — Aurum Interiors` },
         { name: "description", content: scene?.description ?? "Shop this curated room." },
-        { property: "og:title", content: `${scene?.name ?? "Shop the Room"} — NordHaus Living` },
+        { property: "og:title", content: `${scene?.name ?? "Shop the Room"} — Aurum Interiors` },
         { property: "og:description", content: scene?.description ?? "" },
         { property: "og:type", content: "website" },
         { property: "og:image", content: scene?.image ?? "" },

@@ -75,9 +75,9 @@ export const Route = createFileRoute("/rooms/")({
   validateSearch: zodValidator(searchSchema),
   head: () => ({
     meta: [
-      { title: "Shop the Room — NordHaus Living" },
+      { title: "Shop the Room — Aurum Interiors" },
       { name: "description", content: "Browse curated, shoppable room inspiration. Filter by room type, style and price to find your perfect look." },
-      { property: "og:title", content: "Shop the Room — NordHaus Living" },
+      { property: "og:title", content: "Shop the Room — Aurum Interiors" },
       { property: "og:description", content: "Browse curated, shoppable room inspiration." },
     ],
     links: [{ rel: "canonical", href: "/rooms" }],
