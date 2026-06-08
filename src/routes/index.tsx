@@ -334,7 +334,7 @@ function MaterialsStrip() {
           align="center"
         />
       </Reveal>
-      <div className="mt-14 -mx-6 overflow-x-auto px-6 pb-2 sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12">
+      <div className="mt-14 overflow-x-auto pb-2">
         <ul className="flex gap-6 md:grid md:grid-cols-3 md:gap-8 lg:grid-cols-7">
           {MATERIALS.map((m, i) => (
             <Reveal key={m.id} delay={(i % 7) * 0.05}>

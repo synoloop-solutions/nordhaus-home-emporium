@@ -77,10 +77,10 @@ export function Header() {
             </SheetContent>
           </Sheet>
 
-          <Link to="/" className="font-display text-2xl tracking-[0.18em] sm:text-[1.6rem]">
+          <Link to="/" className="whitespace-nowrap font-display text-xl tracking-[0.18em] sm:text-2xl">
             AURUM
             <span className="text-accent"> · </span>
-            <span className="text-base tracking-[0.3em]">INTERIORS</span>
+            <span className="text-sm tracking-[0.28em]">INTERIORS</span>
           </Link>
 
           <nav aria-label="Primary" className="ml-6 hidden items-center gap-1 lg:flex">
