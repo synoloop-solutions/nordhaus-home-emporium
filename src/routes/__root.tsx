@@ -15,6 +15,8 @@ import { Providers } from "../components/Providers";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Toaster } from "../components/ui/sonner";
+import { CookieConsent } from "../components/CookieConsent";
+
 
 function NotFoundComponent() {
   return (
@@ -150,7 +152,9 @@ function RootComponent() {
         </main>
         <Footer />
         <Toaster />
+        <CookieConsent />
       </Providers>
+
     </QueryClientProvider>
   );
 }

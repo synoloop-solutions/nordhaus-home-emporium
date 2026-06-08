@@ -5,13 +5,15 @@ import { toast } from "sonner";
 import { roomCategories } from "@/data/catalog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { openCookieSettings } from "@/components/CookieConsent";
+
 
 export function Footer() {
   const [email, setEmail] = useState("");
   return (
     <footer className="mt-24 border-t border-border/60 bg-primary text-primary-foreground">
       <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-8 lg:px-12">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <p className="font-display text-3xl tracking-[0.16em]">AURUM <span className="text-accent">·</span> INTERIORS</p>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-primary-foreground/75">
@@ -44,6 +46,23 @@ export function Footer() {
               <li><Link to="/account" className="transition-colors hover:text-primary-foreground">My Account</Link></li>
             </ul>
           </nav>
+          <nav aria-label="Legal">
+            <h2 className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">Legal</h2>
+            <ul className="mt-5 space-y-3 text-sm text-primary-foreground/75">
+              <li><Link to="/privacy-policy" className="transition-colors hover:text-primary-foreground">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="transition-colors hover:text-primary-foreground">Terms of Service</Link></li>
+              <li><Link to="/cookie-policy" className="transition-colors hover:text-primary-foreground">Cookie Policy</Link></li>
+              <li>
+                <button
+                  type="button"
+                  onClick={openCookieSettings}
+                  className="text-left transition-colors hover:text-primary-foreground"
+                >
+                  Cookie Settings
+                </button>
+              </li>
+            </ul>
+          </nav>
           <div>
             <h2 className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">Private Mailing List</h2>
             <p className="mt-5 text-sm text-primary-foreground/75">
@@ -71,8 +90,15 @@ export function Footer() {
               <Button type="submit" variant="secondary" className="self-start tracking-[0.18em]">
                 Subscribe
               </Button>
+              <p className="text-[11px] leading-relaxed text-primary-foreground/55">
+                By subscribing you agree to our{" "}
+                <Link to="/privacy-policy" className="underline underline-offset-2 hover:text-primary-foreground">Privacy Policy</Link>
+                {" "}and{" "}
+                <Link to="/terms-of-service" className="underline underline-offset-2 hover:text-primary-foreground">Terms</Link>.
+              </p>
             </form>
           </div>
+
         </div>
         <div className="mt-16 flex flex-col items-center justify-between gap-3 border-t border-primary-foreground/15 pt-8 text-[11px] uppercase tracking-[0.22em] text-primary-foreground/55 sm:flex-row">
           <p>© {new Date().getFullYear()} Aurum Interiors · All rights reserved</p>
