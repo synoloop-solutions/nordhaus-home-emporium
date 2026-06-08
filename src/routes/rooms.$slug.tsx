@@ -118,7 +118,7 @@ function RoomPage() {
         <Reveal>
           <div className="relative overflow-hidden rounded-xl">
             <img src={scene.image} alt={`${scene.name} — shoppable scene`} className="w-full object-cover" />
-            {scene.hotspots.map((h) => {
+            {scene.hotspots.map((h: { x: number; y: number; slug: string }) => {
               const p = getProduct(h.slug);
               if (!p) return null;
               return (
