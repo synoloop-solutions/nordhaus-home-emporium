@@ -2,24 +2,24 @@ import type { Collection, RoomCategory, RoomScene, Testimonial, RoomType, Produc
 import { IMG, lifestyle } from "./images";
 import { getProduct, products } from "./products";
 
-const ls = lifestyle(1200);
+const ls = lifestyle(1400);
 
 export const roomCategories: RoomCategory[] = [
-  { slug: "living-room", name: "Living Room", image: ls.living, description: "Sofas, chairs and tables for everyday gathering." },
-  { slug: "bedroom", name: "Bedroom", image: ls.bedroom, description: "Beds, nightstands and calming retreats." },
-  { slug: "dining-room", name: "Dining Room", image: ls.dining, description: "Tables and chairs for long, lingering meals." },
-  { slug: "office", name: "Home Office", image: ls.office, description: "Desks and seating made for focus." },
-  { slug: "outdoor", name: "Outdoor", image: ls.outdoor, description: "Weatherproof pieces for open-air living." },
-  { slug: "home-decor", name: "Home Decor", image: ls.decor, description: "Rugs, lighting and the finishing touches." },
+  { slug: "living-room", name: "Living Room", image: ls.living, description: "Sculptural seating and gallery-quality tables for everyday gathering." },
+  { slug: "bedroom", name: "Bedroom", image: ls.bedroom, description: "Heirloom beds and bedside pieces composed in linen, oak and brass." },
+  { slug: "dining-room", name: "Dining Room", image: ls.dining, description: "Extending tables and hand-caned chairs made for long evenings." },
+  { slug: "office", name: "Private Study", image: ls.office, description: "Leather-topped desks and architect's seating for considered work." },
+  { slug: "outdoor", name: "Terrace & Garden", image: ls.outdoor, description: "Teak, marine rope and performance textiles for open-air living." },
+  { slug: "home-decor", name: "Objet & Lighting", image: ls.decor, description: "Hand-thrown ceramics, heirloom rugs and sculptural lighting." },
 ];
 
 export const collections: Collection[] = [
-  { slug: "modern-living", name: "Modern Living", tagline: "Clean lines for the contemporary home", image: IMG.living1, productSlugs: ["haven-modular-sofa", "lyra-coffee-table", "aalto-floor-lamp", "loom-area-rug"] },
-  { slug: "scandinavian", name: "Scandinavian Collection", tagline: "Warmth, light and natural materials", image: IMG.living3, productSlugs: ["fjord-lounge-chair", "bramble-bookshelf", "saga-dining-table", "copenhagen-dining-chair"] },
-  { slug: "luxury-bedroom", name: "Luxury Bedroom", tagline: "A sanctuary for rest", image: IMG.bedroom1, productSlugs: ["lumen-platform-bed", "willow-dresser", "mara-nightstand", "aurora-table-lamp"] },
-  { slug: "contemporary-dining", name: "Contemporary Dining", tagline: "Gather in style", image: IMG.dining1, productSlugs: ["saga-dining-table", "copenhagen-dining-chair", "knot-pendant-light", "sideboard-luca"] },
-  { slug: "workspace-essentials", name: "Workspace Essentials", tagline: "Designed for focus", image: IMG.office1, productSlugs: ["atlas-writing-desk", "ergo-task-chair", "stack-bookcase", "focus-floor-lamp"] },
-  { slug: "outdoor-retreat", name: "Outdoor Retreat", tagline: "Bring the indoors out", image: IMG.outdoor1, productSlugs: ["terra-outdoor-sofa", "terra-lounge-chair", "horizon-side-table", "dune-dining-set"] },
+  { slug: "modern-living", name: "Signature Living", tagline: "Sculptural seating, anchored by craft", image: IMG.living1, productSlugs: ["haven-modular-sofa", "lyra-coffee-table", "aalto-floor-lamp", "loom-area-rug"] },
+  { slug: "scandinavian", name: "Private Residence", tagline: "Refined interiors for considered homes", image: IMG.living3, productSlugs: ["fjord-lounge-chair", "bramble-bookshelf", "saga-dining-table", "copenhagen-dining-chair"] },
+  { slug: "luxury-bedroom", name: "Atelier Bedroom", tagline: "A sanctuary in linen, oak and brass", image: IMG.bedroom1, productSlugs: ["lumen-platform-bed", "willow-dresser", "mara-nightstand", "aurora-table-lamp"] },
+  { slug: "contemporary-dining", name: "Grand Dining", tagline: "Tables made for unhurried evenings", image: IMG.dining1, productSlugs: ["saga-dining-table", "copenhagen-dining-chair", "knot-pendant-light", "sideboard-luca"] },
+  { slug: "workspace-essentials", name: "Executive Office", tagline: "Studies for focused, beautiful work", image: IMG.office1, productSlugs: ["atlas-writing-desk", "ergo-task-chair", "stack-bookcase", "focus-floor-lamp"] },
+  { slug: "outdoor-retreat", name: "Heritage Collection", tagline: "Archive silhouettes, reimagined", image: IMG.outdoor1, productSlugs: ["terra-outdoor-sofa", "terra-lounge-chair", "horizon-side-table", "dune-dining-set"] },
 ];
 
 export const getCollection = (slug: string) => collections.find((c) => c.slug === slug);
@@ -27,8 +27,8 @@ export const getCollection = (slug: string) => collections.find((c) => c.slug ==
 export const roomScenes: RoomScene[] = [
   {
     slug: "sunlit-living-room",
-    name: "The Sunlit Living Room",
-    description: "Layered neutrals, soft boucle and warm oak make this living room an invitation to slow down.",
+    name: "The Penthouse Salon",
+    description: "Travertine, full-grain leather and bookmatched walnut compose a living room shaped by light and proportion.",
     image: IMG.living1,
     productSlugs: ["haven-modular-sofa", "lyra-coffee-table", "aalto-floor-lamp", "loom-area-rug", "halo-accent-chair"],
     hotspots: [
@@ -39,8 +39,8 @@ export const roomScenes: RoomScene[] = [
   },
   {
     slug: "serene-bedroom",
-    name: "The Serene Bedroom",
-    description: "A low platform bed, soft textiles and ceramic lighting create a calm, restorative retreat.",
+    name: "The Designer Suite",
+    description: "A low-profile platform bed in oiled oak, sheathed in Belgian linen and lit by hand-spun ceramic.",
     image: IMG.bedroom1,
     productSlugs: ["lumen-platform-bed", "mara-nightstand", "aurora-table-lamp", "hearth-throw-blanket", "willow-dresser"],
     hotspots: [
@@ -51,8 +51,8 @@ export const roomScenes: RoomScene[] = [
   },
   {
     slug: "gathered-dining",
-    name: "The Gathered Dining Room",
-    description: "An extendable oak table, woven chairs and a rattan pendant set the scene for long dinners.",
+    name: "The Grand Dining Room",
+    description: "An extending walnut table, hand-caned chairs and a sculptural brass pendant — composed for long, lingering evenings.",
     image: IMG.dining1,
     productSlugs: ["saga-dining-table", "copenhagen-dining-chair", "knot-pendant-light", "sideboard-luca"],
     hotspots: [
@@ -63,8 +63,8 @@ export const roomScenes: RoomScene[] = [
   },
   {
     slug: "focused-studio",
-    name: "The Focused Studio",
-    description: "A clean writing desk, ergonomic seating and modular storage built for deep work.",
+    name: "The Executive Study",
+    description: "A leather-topped writing desk, an architect's chair and stacked oak shelving — built for considered work.",
     image: IMG.office1,
     productSlugs: ["atlas-writing-desk", "ergo-task-chair", "stack-bookcase", "focus-floor-lamp"],
     hotspots: [
@@ -75,8 +75,8 @@ export const roomScenes: RoomScene[] = [
   },
   {
     slug: "open-air-terrace",
-    name: "The Open-Air Terrace",
-    description: "Teak, rope and quick-dry cushions make this terrace ready for golden-hour gatherings.",
+    name: "The Architectural Terrace",
+    description: "Teak frames, marine rope and quick-dry performance textiles, composed for the golden hour.",
     image: IMG.outdoor1,
     productSlugs: ["terra-outdoor-sofa", "terra-lounge-chair", "horizon-side-table", "dune-dining-set"],
     hotspots: [
@@ -87,8 +87,8 @@ export const roomScenes: RoomScene[] = [
   },
   {
     slug: "curated-corner",
-    name: "The Curated Corner",
-    description: "Rugs, ceramics and a sculptural chair bring personality to a quiet reading nook.",
+    name: "The Collector's Corner",
+    description: "Heirloom rugs, hand-thrown ceramics and a sculptural lounge chair — a still life in the language of home.",
     image: IMG.living2,
     productSlugs: ["halo-accent-chair", "loom-area-rug", "vessel-vase-set", "drift-wall-mirror", "grove-planter"],
     hotspots: [
@@ -102,25 +102,25 @@ export const roomScenes: RoomScene[] = [
 export const getRoomScene = (slug: string) => roomScenes.find((r) => r.slug === slug);
 
 export const testimonials: Testimonial[] = [
-  { id: "t1", name: "Sofia Lindqvist", location: "Stockholm", rating: 5, quote: "NordHaus transformed our apartment. The Haven sofa is the most comfortable thing we own, and the white-glove delivery was flawless.", photo: IMG.living2 },
-  { id: "t2", name: "Daniel Okoye", location: "London", rating: 5, quote: "Beautiful craftsmanship and genuinely helpful design advice. Our dining room finally feels finished.", photo: IMG.dining1 },
-  { id: "t3", name: "Mei Tanaka", location: "Toronto", rating: 5, quote: "The quality is exceptional for the price. Two years in and the oak still looks brand new.", photo: IMG.bedroom1 },
-  { id: "t4", name: "Lucas Moreau", location: "Paris", rating: 5, quote: "From browsing to assembly, the whole experience felt premium. Highly recommend the design consultation.", photo: IMG.living1 },
-  { id: "t5", name: "Hannah Berg", location: "Copenhagen", rating: 5, quote: "Warm, timeless pieces that work beautifully together. The room planner made it so easy.", photo: IMG.living3 },
-  { id: "t6", name: "Arjun Patel", location: "Sydney", rating: 5, quote: "Our terrace is now the favourite spot in the house. Teak quality is outstanding.", photo: IMG.outdoor1 },
+  { id: "t1", name: "Sofia Lindqvist", location: "Interior Designer · Stockholm", rating: 5, quote: "Aurum's craftsmanship rivals the European ateliers I source from in Milan. The Haven sofa anchored an entire penthouse project.", photo: IMG.living2 },
+  { id: "t2", name: "Daniel Okoye", location: "Architect · London", rating: 5, quote: "From specification to white-glove install, the experience was effortless. The walnut grain on the dining table is exceptional.", photo: IMG.dining1 },
+  { id: "t3", name: "Mei Tanaka", location: "Private Client · Toronto", rating: 5, quote: "Three years into the suite and the leather has only grown more beautiful. This is furniture made to be inherited.", photo: IMG.bedroom1 },
+  { id: "t4", name: "Lucas Moreau", location: "Hospitality Designer · Paris", rating: 5, quote: "Aurum understands the brief instinctively. Every piece arrived as specified — the bespoke service is genuinely bespoke.", photo: IMG.living1 },
+  { id: "t5", name: "Hannah Berg", location: "Private Client · Copenhagen", rating: 5, quote: "Timeless silhouettes, honest materials, and a level of finish you don't find at this scale anywhere else.", photo: IMG.living3 },
+  { id: "t6", name: "Arjun Patel", location: "Real Estate Developer · Sydney", rating: 5, quote: "We furnished three penthouses with Aurum. The trade program and design service made what could have been complex feel choreographed.", photo: IMG.outdoor1 },
 ];
 
 export const designServices = [
-  { id: "consult", title: "Interior Consultation", description: "Book a free 1:1 session with a NordHaus designer to plan your space.", icon: "MessageSquare" },
-  { id: "planning", title: "Room Planning", description: "Get a tailored layout with furniture recommendations for any room.", icon: "LayoutGrid" },
-  { id: "assist", title: "Design Assistance", description: "Ongoing support from selection to styling, on your schedule.", icon: "Sparkles" },
+  { id: "consult", title: "Private Design Consultation", description: "A bespoke 1:1 session with a senior Aurum designer — in your home or our atelier.", icon: "MessageSquare" },
+  { id: "planning", title: "Residential & Commercial", description: "Tailored layouts and material palettes for private residences, offices and architectural homes.", icon: "LayoutGrid" },
+  { id: "assist", title: "Hospitality & Trade", description: "End-to-end specification for hotels, restaurants and developers, with dedicated trade pricing.", icon: "Sparkles" },
 ];
 
 export const trustSignals = [
-  { id: "delivery", title: "Free Delivery", text: "On orders over $999", icon: "Truck" },
-  { id: "returns", title: "Easy Returns", text: "30-day hassle-free returns", icon: "RotateCcw" },
-  { id: "secure", title: "Secure Checkout", text: "256-bit SSL encryption", icon: "ShieldCheck" },
-  { id: "warranty", title: "5-Year Warranty", text: "On all furniture", icon: "BadgeCheck" },
+  { id: "delivery", title: "White-Glove Delivery", text: "Installed and styled in your home", icon: "Truck" },
+  { id: "returns", title: "Considered Returns", text: "30-day reconsideration window", icon: "RotateCcw" },
+  { id: "secure", title: "Bespoke Atelier", text: "Made to your specification", icon: "ShieldCheck" },
+  { id: "warranty", title: "Lifetime Craftsmanship", text: "Guaranteed by our atelier", icon: "BadgeCheck" },
 ];
 
 export const FREE_DELIVERY_THRESHOLD = 999;
