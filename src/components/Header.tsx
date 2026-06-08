@@ -50,7 +50,8 @@ export function Header() {
         <div className="mx-auto flex h-20 max-w-[1400px] items-center gap-6 px-6 sm:px-8 lg:px-12">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu">
+              <Button variant="ghost" size="icon" className="xl:hidden" aria-label="Open menu">
+
                 <Menu className="size-5" />
               </Button>
             </SheetTrigger>
@@ -83,7 +84,7 @@ export function Header() {
             AURUM<span className="text-accent">&nbsp;·&nbsp;</span><span className="text-sm tracking-[0.28em]">INTERIORS</span>
           </Link>
 
-          <nav aria-label="Primary" className="ml-4 hidden min-w-0 flex-1 items-center gap-1 lg:flex">
+          <nav aria-label="Primary" className="ml-4 hidden min-w-0 flex-1 items-center gap-1 xl:flex">
             {navLinks.map((l) => (
               <Link
                 key={l.label}
