@@ -17,6 +17,7 @@ import {
 import { SearchOverlay } from "./SearchOverlay";
 
 const navLinks = [
+  { label: "Shop the Room", to: "/rooms" as const, search: {} },
   ...roomCategories.map((r) => ({ label: r.name, to: "/shop" as const, search: { room: r.slug } })),
   { label: "New Arrivals", to: "/shop" as const, search: { filter: "new" as const } },
   { label: "Sale", to: "/shop" as const, search: { filter: "sale" as const } },
