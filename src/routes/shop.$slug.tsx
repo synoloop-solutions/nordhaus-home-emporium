@@ -164,32 +164,72 @@ function ProductPage() {
         </div>
       </div>
 
-      <Tabs defaultValue="details" className="mt-12">
-        <TabsList>
-          <TabsTrigger value="details">Details</TabsTrigger>
-          <TabsTrigger value="dimensions">Dimensions</TabsTrigger>
-          <TabsTrigger value="care">Care & Warranty</TabsTrigger>
-        </TabsList>
-        <TabsContent value="details" className="prose-sm max-w-none pt-4">
-          <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-            {p.details.map((d, i) => <li key={i}>{d}</li>)}
+      <section className="mt-20 grid gap-12 border-t border-border/60 pt-16 lg:grid-cols-3">
+        <div>
+          <p className="text-eyebrow">The Design Story</p>
+          <h2 className="mt-3 font-display text-3xl">A considered silhouette</h2>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            {p.description} Composed in our atelier from honest materials, the {p.name} is sketched,
+            prototyped and refined over months — a piece intended to be lived with, and inherited.
+          </p>
+        </div>
+        <div>
+          <p className="text-eyebrow">Designer Notes</p>
+          <h2 className="mt-3 font-display text-3xl">From our studio</h2>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            "We wanted a piece that disappears into the room and yet anchors it. The proportions
+            are drawn from mid-century European modernism; the materials are entirely our own." —
+            Aurum Design Studio
+          </p>
+        </div>
+        <div>
+          <p className="text-eyebrow">Premium Materials</p>
+          <h2 className="mt-3 font-display text-3xl">What it's made of</h2>
+          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            {p.materials.map((m, i) => (
+              <li key={i} className="flex gap-3 border-b border-border/40 pb-2">
+                <span className="text-accent">—</span>
+                <span>{m}</span>
+              </li>
+            ))}
           </ul>
-          <p className="mt-3 text-sm"><strong>Materials:</strong> {p.materials.join(", ")}</p>
-          <p className="mt-1 text-sm"><strong>Assembly:</strong> {p.assembly}</p>
+        </div>
+      </section>
+
+      <Tabs defaultValue="craftsmanship" className="mt-20">
+        <TabsList className="h-auto flex-wrap gap-1 bg-transparent p-0">
+          <TabsTrigger value="craftsmanship" className="rounded-none border-b-2 border-transparent px-4 py-3 text-[11px] uppercase tracking-[0.2em] data-[state=active]:border-accent data-[state=active]:bg-transparent">Craftsmanship</TabsTrigger>
+          <TabsTrigger value="dimensions" className="rounded-none border-b-2 border-transparent px-4 py-3 text-[11px] uppercase tracking-[0.2em] data-[state=active]:border-accent data-[state=active]:bg-transparent">Dimensions</TabsTrigger>
+          <TabsTrigger value="care" className="rounded-none border-b-2 border-transparent px-4 py-3 text-[11px] uppercase tracking-[0.2em] data-[state=active]:border-accent data-[state=active]:bg-transparent">Care & Maintenance</TabsTrigger>
+          <TabsTrigger value="warranty" className="rounded-none border-b-2 border-transparent px-4 py-3 text-[11px] uppercase tracking-[0.2em] data-[state=active]:border-accent data-[state=active]:bg-transparent">Warranty</TabsTrigger>
+        </TabsList>
+        <TabsContent value="craftsmanship" className="pt-6">
+          <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
+            {p.details.map((d, i) => (
+              <li key={i} className="flex gap-3 border-b border-border/40 pb-3"><span className="text-accent">—</span>{d}</li>
+            ))}
+          </ul>
+          <p className="mt-6 text-sm text-muted-foreground"><strong className="text-foreground">Assembly:</strong> {p.assembly}</p>
         </TabsContent>
-        <TabsContent value="dimensions" className="pt-4">
-          <dl className="grid grid-cols-2 gap-3 text-sm sm:grid-cols-3">
-            <div><dt className="text-muted-foreground">Height</dt><dd className="font-medium">{p.dimensions.height}"</dd></div>
-            <div><dt className="text-muted-foreground">Width</dt><dd className="font-medium">{p.dimensions.width}"</dd></div>
-            <div><dt className="text-muted-foreground">Depth</dt><dd className="font-medium">{p.dimensions.depth}"</dd></div>
-            <div><dt className="text-muted-foreground">Weight</dt><dd className="font-medium">{p.dimensions.weight} lbs</dd></div>
-            {p.dimensions.seatHeight && <div><dt className="text-muted-foreground">Seat height</dt><dd className="font-medium">{p.dimensions.seatHeight}"</dd></div>}
-            {p.dimensions.seatDepth && <div><dt className="text-muted-foreground">Seat depth</dt><dd className="font-medium">{p.dimensions.seatDepth}"</dd></div>}
+        <TabsContent value="dimensions" className="pt-6">
+          <dl className="grid grid-cols-2 gap-x-6 gap-y-4 text-sm sm:grid-cols-3">
+            <div className="border-b border-border/40 pb-3"><dt className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Height</dt><dd className="mt-1 font-display text-xl">{p.dimensions.height}"</dd></div>
+            <div className="border-b border-border/40 pb-3"><dt className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Width</dt><dd className="mt-1 font-display text-xl">{p.dimensions.width}"</dd></div>
+            <div className="border-b border-border/40 pb-3"><dt className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Depth</dt><dd className="mt-1 font-display text-xl">{p.dimensions.depth}"</dd></div>
+            <div className="border-b border-border/40 pb-3"><dt className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Weight</dt><dd className="mt-1 font-display text-xl">{p.dimensions.weight} lbs</dd></div>
+            {p.dimensions.seatHeight && <div className="border-b border-border/40 pb-3"><dt className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Seat height</dt><dd className="mt-1 font-display text-xl">{p.dimensions.seatHeight}"</dd></div>}
+            {p.dimensions.seatDepth && <div className="border-b border-border/40 pb-3"><dt className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Seat depth</dt><dd className="mt-1 font-display text-xl">{p.dimensions.seatDepth}"</dd></div>}
           </dl>
         </TabsContent>
-        <TabsContent value="care" className="pt-4 text-sm text-muted-foreground">
+        <TabsContent value="care" className="pt-6 text-sm leading-relaxed text-muted-foreground">
           <p>{p.care}</p>
-          <p className="mt-3"><strong className="text-foreground">Warranty:</strong> {p.warranty}</p>
+          <p className="mt-4">Hand-finished surfaces will develop a unique patina with time and use. We recommend
+          occasional conditioning with neutral leather balm and waxing of any unsealed timber surfaces twice yearly.</p>
+        </TabsContent>
+        <TabsContent value="warranty" className="pt-6 text-sm leading-relaxed text-muted-foreground">
+          <p><strong className="text-foreground">Lifetime Craftsmanship Warranty.</strong> Every Aurum piece is
+          guaranteed against defects in materials and workmanship for the lifetime of the original owner.</p>
+          <p className="mt-3">{p.warranty}</p>
         </TabsContent>
       </Tabs>
 
