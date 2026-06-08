@@ -1,5 +1,6 @@
-import type { Collection, RoomCategory, RoomScene, Testimonial } from "./types";
+import type { Collection, RoomCategory, RoomScene, Testimonial, RoomType, Product } from "./types";
 import { IMG, lifestyle } from "./images";
+import { getProduct, products } from "./products";
 
 const ls = lifestyle(1200);
 
