@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Heart, Minus, Plus } from "lucide-react";
 import { toast } from "sonner";
 import { getProduct, relatedProducts } from "@/data/products";
+import type { Product } from "@/data/types";
 import { formatPrice } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { StarRating } from "@/components/StarRating";
@@ -59,7 +60,7 @@ export const Route = createFileRoute("/shop/$slug")({
 });
 
 function ProductPage() {
-  const { product: p } = Route.useLoaderData();
+  const { product: p } = Route.useLoaderData() as { product: Product };
   const { addItem } = useCart();
   const { has, toggle } = useWishlist();
   const { record } = useRecentlyViewed();
