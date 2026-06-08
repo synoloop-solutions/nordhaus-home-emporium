@@ -77,10 +77,8 @@ export function Header() {
             </SheetContent>
           </Sheet>
 
-          <Link to="/" className="shrink-0 whitespace-nowrap font-display text-xl tracking-[0.18em] sm:text-2xl">
-            AURUM
-            <span className="text-accent"> · </span>
-            <span className="text-sm tracking-[0.28em]">INTERIORS</span>
+          <Link to="/" className="shrink-0 font-display text-xl tracking-[0.18em] sm:text-2xl" style={{ whiteSpace: "nowrap" }}>
+            AURUM<span className="text-accent">&nbsp;·&nbsp;</span><span className="text-sm tracking-[0.28em]">INTERIORS</span>
           </Link>
 
           <nav aria-label="Primary" className="ml-6 hidden items-center gap-1 lg:flex">
