@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -40,8 +40,15 @@ function AccountPage() {
             <div className="space-y-1.5"><Label htmlFor="re">Email</Label><Input id="re" type="email" required /></div>
             <div className="space-y-1.5"><Label htmlFor="rp">Password</Label><Input id="rp" type="password" required /></div>
             <Button type="submit" className="w-full">Create account</Button>
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              By creating an account you agree to our{" "}
+              <Link to="/terms-of-service" className="underline underline-offset-2 hover:text-foreground">Terms of Service</Link>
+              {" "}and{" "}
+              <Link to="/privacy-policy" className="underline underline-offset-2 hover:text-foreground">Privacy Policy</Link>.
+            </p>
           </form>
         </TabsContent>
+
       </Tabs>
     </div>
   );

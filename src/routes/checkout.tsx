@@ -92,7 +92,14 @@ function CheckoutPage() {
               <div className="space-y-1.5"><Label htmlFor="cvc">CVC</Label><Input id="cvc" inputMode="numeric" placeholder="123" required /></div>
             </div>
             <p className="flex items-center gap-1.5 text-xs text-muted-foreground"><ShieldCheck className="size-4 text-accent" /> Secure 256-bit SSL encrypted payment</p>
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              By placing your order you agree to our{" "}
+              <Link to="/terms-of-service" className="underline underline-offset-2 hover:text-foreground">Terms of Service</Link>
+              {" "}and{" "}
+              <Link to="/privacy-policy" className="underline underline-offset-2 hover:text-foreground">Privacy Policy</Link>.
+            </p>
             <Button type="submit" className="w-full">Review order</Button>
+
           </form>
         )}
         {step === 4 && (

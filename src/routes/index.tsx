@@ -585,8 +585,10 @@ function Newsletter() {
             </Button>
           </form>
           <p className="mt-4 text-[11px] uppercase tracking-[0.2em] text-primary-foreground/55">
-            Unsubscribe at any time
+            Unsubscribe at any time · By subscribing you agree to our{" "}
+            <Link to="/privacy-policy" className="underline underline-offset-2 hover:text-primary-foreground">Privacy Policy</Link>
           </p>
+
         </Reveal>
       </div>
     </section>
