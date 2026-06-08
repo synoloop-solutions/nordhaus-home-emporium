@@ -154,9 +154,10 @@ function LegalLayout({
         </h1>
         <p className="mt-3 text-sm text-muted-foreground">{updated}</p>
       </header>
-      <div className="prose prose-neutral mt-10 max-w-none text-foreground/85 prose-headings:font-display prose-headings:font-semibold prose-headings:text-foreground prose-h2:mt-10 prose-h2:text-xl prose-p:leading-relaxed prose-a:text-foreground prose-a:underline-offset-4 hover:prose-a:text-accent">
+      <div className="legal-prose mt-10 text-foreground/85">
         {children}
       </div>
+
     </article>
   );
 }
