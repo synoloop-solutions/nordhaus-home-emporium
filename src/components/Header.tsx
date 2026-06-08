@@ -77,7 +77,7 @@ export function Header() {
             </SheetContent>
           </Sheet>
 
-          <Link to="/" className="whitespace-nowrap font-display text-xl tracking-[0.18em] sm:text-2xl">
+          <Link to="/" className="shrink-0 whitespace-nowrap font-display text-xl tracking-[0.18em] sm:text-2xl">
             AURUM
             <span className="text-accent"> · </span>
             <span className="text-sm tracking-[0.28em]">INTERIORS</span>
