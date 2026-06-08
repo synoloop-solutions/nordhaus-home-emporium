@@ -151,7 +151,7 @@ function RoomPage() {
           </Button>
         </div>
         <div className="mt-8 grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
-          {products.map((p, i) => (
+          {products.map((p: Product, i: number) => (
             <Reveal key={p.slug} delay={(i % 4) * 0.05}>
               <ProductCard product={p} />
             </Reveal>
