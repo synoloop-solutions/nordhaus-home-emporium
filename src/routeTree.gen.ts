@@ -15,6 +15,7 @@ import { Route as CartRouteImport } from './routes/cart'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ShopIndexRouteImport } from './routes/shop.index'
+import { Route as RoomsIndexRouteImport } from './routes/rooms.index'
 import { Route as ShopSlugRouteImport } from './routes/shop.$slug'
 import { Route as RoomsSlugRouteImport } from './routes/rooms.$slug'
 
@@ -48,6 +49,11 @@ const ShopIndexRoute = ShopIndexRouteImport.update({
   path: '/shop/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RoomsIndexRoute = RoomsIndexRouteImport.update({
+  id: '/rooms/',
+  path: '/rooms/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopSlugRoute = ShopSlugRouteImport.update({
   id: '/shop/$slug',
   path: '/shop/$slug',
@@ -67,6 +73,7 @@ export interface FileRoutesByFullPath {
   '/wishlist': typeof WishlistRoute
   '/rooms/$slug': typeof RoomsSlugRoute
   '/shop/$slug': typeof ShopSlugRoute
+  '/rooms/': typeof RoomsIndexRoute
   '/shop/': typeof ShopIndexRoute
 }
 export interface FileRoutesByTo {
@@ -77,6 +84,7 @@ export interface FileRoutesByTo {
   '/wishlist': typeof WishlistRoute
   '/rooms/$slug': typeof RoomsSlugRoute
   '/shop/$slug': typeof ShopSlugRoute
+  '/rooms': typeof RoomsIndexRoute
   '/shop': typeof ShopIndexRoute
 }
 export interface FileRoutesById {
@@ -88,6 +96,7 @@ export interface FileRoutesById {
   '/wishlist': typeof WishlistRoute
   '/rooms/$slug': typeof RoomsSlugRoute
   '/shop/$slug': typeof ShopSlugRoute
+  '/rooms/': typeof RoomsIndexRoute
   '/shop/': typeof ShopIndexRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +109,7 @@ export interface FileRouteTypes {
     | '/wishlist'
     | '/rooms/$slug'
     | '/shop/$slug'
+    | '/rooms/'
     | '/shop/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/wishlist'
     | '/rooms/$slug'
     | '/shop/$slug'
+    | '/rooms'
     | '/shop'
   id:
     | '__root__'
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/wishlist'
     | '/rooms/$slug'
     | '/shop/$slug'
+    | '/rooms/'
     | '/shop/'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +143,7 @@ export interface RootRouteChildren {
   WishlistRoute: typeof WishlistRoute
   RoomsSlugRoute: typeof RoomsSlugRoute
   ShopSlugRoute: typeof ShopSlugRoute
+  RoomsIndexRoute: typeof RoomsIndexRoute
   ShopIndexRoute: typeof ShopIndexRoute
 }
 
@@ -178,6 +191,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rooms/': {
+      id: '/rooms/'
+      path: '/rooms'
+      fullPath: '/rooms/'
+      preLoaderRoute: typeof RoomsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shop/$slug': {
       id: '/shop/$slug'
       path: '/shop/$slug'
@@ -203,6 +223,7 @@ const rootRouteChildren: RootRouteChildren = {
   WishlistRoute: WishlistRoute,
   RoomsSlugRoute: RoomsSlugRoute,
   ShopSlugRoute: ShopSlugRoute,
+  RoomsIndexRoute: RoomsIndexRoute,
   ShopIndexRoute: ShopIndexRoute,
 }
 export const routeTree = rootRouteImport

@@ -70,10 +70,10 @@ function RoomPage() {
   const { scene, products } = Route.useLoaderData();
   const { addItem } = useCart();
 
-  const bundleTotal = products.reduce((sum, p) => sum + (p.salePrice ?? p.price), 0);
+  const bundleTotal = products.reduce((sum: number, p: Product) => sum + (p.salePrice ?? p.price), 0);
 
   const addAll = () => {
-    products.forEach((p) =>
+    products.forEach((p: Product) =>
       addItem({ slug: p.slug, qty: 1, unitPrice: p.salePrice ?? p.price, options: {} }),
     );
     toast.success(`${products.length} pieces added to your cart`);
@@ -118,7 +118,7 @@ function RoomPage() {
         <Reveal>
           <div className="relative overflow-hidden rounded-xl">
             <img src={scene.image} alt={`${scene.name} — shoppable scene`} className="w-full object-cover" />
-            {scene.hotspots.map((h) => {
+            {scene.hotspots.map((h: { x: number; y: number; slug: string }) => {
               const p = getProduct(h.slug);
               if (!p) return null;
               return (
@@ -151,7 +151,7 @@ function RoomPage() {
           </Button>
         </div>
         <div className="mt-8 grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
-          {products.map((p, i) => (
+          {products.map((p: Product, i: number) => (
             <Reveal key={p.slug} delay={(i % 4) * 0.05}>
               <ProductCard product={p} />
             </Reveal>
