@@ -70,10 +70,10 @@ function RoomPage() {
   const { scene, products } = Route.useLoaderData();
   const { addItem } = useCart();
 
-  const bundleTotal = products.reduce((sum, p) => sum + (p.salePrice ?? p.price), 0);
+  const bundleTotal = products.reduce((sum: number, p: Product) => sum + (p.salePrice ?? p.price), 0);
 
   const addAll = () => {
-    products.forEach((p) =>
+    products.forEach((p: Product) =>
       addItem({ slug: p.slug, qty: 1, unitPrice: p.salePrice ?? p.price, options: {} }),
     );
     toast.success(`${products.length} pieces added to your cart`);
