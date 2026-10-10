@@ -6,11 +6,11 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Providers } from "../components/Providers";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -40,12 +40,9 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -93,8 +90,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Aurum Interiors — Handcrafted Luxury Furniture & Bespoke Design" },
       { name: "twitter:description", content: "Aurum Interiors crafts heirloom furniture from Italian leather, solid oak, travertine and brass — for private residences, hospitality and the architectural home." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e57ce44c-49fb-4e07-8168-8ab43278dacb/id-preview-d3d4c577--2db82e81-b779-4807-b145-22ccb68f62ce.lovable.app-1780936499110.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e57ce44c-49fb-4e07-8168-8ab43278dacb/id-preview-d3d4c577--2db82e81-b779-4807-b145-22ccb68f62ce.lovable.app-1780936499110.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
